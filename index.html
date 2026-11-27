@@ -1,111 +1,104 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#08080d">
-  <meta name="description" content="Um cantinho especial feito de K para G.">
-  <title>K ♥ G — Nosso cantinho</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./css/style.css?v=2">
-  <script src="./js/script.js?v=2" defer></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#08080d">
+<title>K ♥ G — Nosso cantinho</title>
+<style>
+:root{--bg:#08080d;--pink:#ff9fc2;--pink2:#ff5d9b;--red:#f04c5b;--cream:#fff3f7;--muted:#d2b5c1}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 15% 10%,rgba(240,76,91,.16),transparent 35%),radial-gradient(ellipse at 90% 40%,rgba(255,93,155,.13),transparent 36%),var(--bg);color:var(--cream);font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
+.top{width:min(1000px,90%);margin:auto;padding:22px 0;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #ffffff16}
+.brand{font:700 24px Georgia,serif;color:var(--cream);text-decoration:none}.brand span{color:var(--pink2)}
+.top small{color:var(--muted);letter-spacing:1px}
+main{width:min(1000px,90%);margin:auto}
+.hero{min-height:66vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:65px 0}
+.eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--pink);font-weight:bold}
+h1{font:700 clamp(76px,16vw,140px)/1 Georgia,serif;letter-spacing:-5px;margin:16px 0;color:#fff;text-shadow:0 0 35px #ff5d9b44}
+h1 span{color:var(--pink2)}
+.sub{color:var(--muted);font-size:15px;line-height:1.7}
+.down{margin-top:35px;color:var(--pink);font-size:12px;letter-spacing:2px}
+.heading{text-align:center;margin:20px 0 38px}
+h2{font:500 clamp(30px,5vw,46px)/1.2 Georgia,serif;margin:10px 0}
+h2 em{color:var(--pink);font-style:italic}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;max-width:780px;margin:auto}
+.card{position:relative;text-align:center;padding:25px 16px 28px;border:1px solid #ff9fc244;border-radius:22px;background:linear-gradient(145deg,#ffffff0d,#ffffff03);overflow:hidden}
+.card.spider{border-color:#f04c5b66}
+.art{height:180px;display:grid;place-items:center}
+.art svg{width:min(100%,210px);height:175px}
+.web{fill:none;stroke:#ff9fc277;stroke-width:1.5}
+.spider-body{fill:#f04c5b;stroke:#f04c5b;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+.eye{fill:#fff}
+.cat-head{fill:#fff0f5;stroke:#ff9fc2;stroke-width:3;stroke-linejoin:round}
+.bow{fill:#f04c5b;stroke:#ff9fc2;stroke-width:2}
+.cat-eye,.cat-nose{fill:#38202b}
+.whisker{fill:none;stroke:#38202b;stroke-width:2;stroke-linecap:round}
+.cheek{fill:#ff9fc2}
+.kicker{font-size:10px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin:8px 0}
+.letter{font:700 48px Georgia,serif;margin:5px}.spider .letter{color:var(--red)}.kitty .letter{color:var(--pink)}
+.caption{font-size:12px;color:var(--muted);line-height:1.6}
+.love{font-size:10px;letter-spacing:3px;color:var(--pink);margin-top:15px}
+.note{max-width:700px;margin:100px auto;padding:45px 25px;text-align:center;border:1px solid #ff9fc244;border-radius:12px;background:#ff9fc20a;position:relative}
+.note .bow-text{font-size:30px;position:absolute;top:-22px;left:calc(50% - 15px)}
+.note p{max-width:520px;margin:22px auto;color:var(--muted);font-size:14px;line-height:2}
+.surprise{text-align:center;padding:0 0 95px}
+button{border:0;border-radius:30px;padding:15px 23px;background:linear-gradient(100deg,var(--pink),#ffc4d8);color:#2b101b;font-weight:bold;cursor:pointer;box-shadow:0 8px 30px #ff5d9b33}
+button:focus-visible{outline:3px solid white;outline-offset:4px}
+#message{min-height:35px;margin:22px auto;color:var(--pink);font:19px Georgia,serif}
+footer{text-align:center;border-top:1px solid #ffffff16;padding:28px 10px;color:#a98d9a;font-size:11px;letter-spacing:1px}
+.float{position:fixed;bottom:-30px;z-index:4;pointer-events:none;color:var(--pink);animation:rise linear forwards}
+@keyframes rise{15%{opacity:.7}100%{transform:translateY(-110vh) rotate(30deg);opacity:0}}
+@media(max-width:580px){.grid{gap:10px}.card{padding:20px 9px;min-height:340px}.art{height:150px}.art svg{height:150px}.hero{min-height:60vh}.note{margin:75px auto;padding:40px 20px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important}}
+</style>
 </head>
 <body>
-  <div class="ambient ambient--red" aria-hidden="true"></div>
-  <div class="ambient ambient--pink" aria-hidden="true"></div>
-  <div class="hearts-layer" id="hearts-layer" aria-hidden="true"></div>
-
-  <header class="topbar">
-    <a class="brand" href="#inicio" aria-label="K e G, início">K <span>♥</span> G</a>
-    <span class="topbar-note">feito com carinho <span aria-hidden="true">🎀</span></span>
-  </header>
-
-  <main>
-    <section class="hero section" id="inicio">
-      <p class="eyebrow"><span class="sparkle">✦</span> um universo só nosso <span class="sparkle">✦</span></p>
-      <h1>K <span class="heart-letter">♥</span> G</h1>
-      <p class="hero-subtitle">Duas letras, dois mundos e uma história especial.</p>
-      <a class="scroll-cue" href="#nosso-mundo">deslize para descobrir <span>↓</span></a>
-    </section>
-
-    <section class="world section" id="nosso-mundo">
-      <div class="section-heading">
-        <p class="eyebrow">nossos personagens</p>
-        <h2>Dois jeitinhos de <em>amar</em></h2>
-        <p class="section-copy">Um toque de aventura, um toque de fofura e muito carinho.</p>
-      </div>
-
-      <div class="character-grid">
-        <article class="character-card character-card--hero">
-          <div class="card-decoration">✦ ♥ ✦</div>
-          <div class="illustration spider-illustration" role="img" aria-label="Ilustração decorativa de uma aranha e sua teia">
-            <svg viewBox="0 0 220 190" aria-hidden="true">
-              <path class="web" d="M110 8V182M20 95H200M45 30L175 160M175 30L45 160M110 8L20 95L110 182L200 95Z"/>
-              <path class="web web-ring" d="M75 60Q110 42 145 60Q163 95 145 130Q110 148 75 130Q57 95 75 60Z"/>
-              <g class="spider">
-                <ellipse cx="110" cy="91" rx="18" ry="23"/>
-                <circle cx="110" cy="65" r="14"/>
-                <path d="M96 75L76 61L62 68M94 88L69 85L55 99M95 101L73 113L65 131M101 111L91 137L98 151M124 75L144 61L158 68M126 88L151 85L165 99M125 101L147 113L155 131M119 111L129 137L122 151"/>
-                <circle class="spider-eye" cx="105" cy="64" r="3"/><circle class="spider-eye" cx="115" cy="64" r="3"/>
-              </g>
-            </svg>
-          </div>
-          <p class="character-kicker">o lado aventureiro</p>
-          <h3>K</h3>
-          <p class="character-caption">Coragem para enfrentar qualquer dia.</p>
-          <span class="mini-love">I LOVE YOU ♥</span>
-        </article>
-
-        <article class="character-card character-card--sweet">
-          <div class="card-decoration">♡ 🎀 ♡</div>
-          <div class="illustration kitty-illustration" role="img" aria-label="Ilustração de uma gatinha fofa com laço">
-            <svg viewBox="0 0 220 190" aria-hidden="true">
-              <path class="kitty-bow" d="M87 42C61 15 43 31 57 58C66 72 80 65 96 55Z M133 42C159 15 177 31 163 58C154 72 140 65 124 55Z"/>
-              <circle class="bow-knot" cx="110" cy="53" r="10"/>
-              <path class="kitty-head" d="M57 73L49 35L85 51Q110 42 135 51L171 35L163 73Q181 101 168 133Q153 164 110 164Q67 164 52 133Q39 101 57 73Z"/>
-              <ellipse class="kitty-eye" cx="84" cy="101" rx="4" ry="7"/>
-              <ellipse class="kitty-eye" cx="136" cy="101" rx="4" ry="7"/>
-              <ellipse class="kitty-nose" cx="110" cy="115" rx="5" ry="3"/>
-              <path class="whiskers" d="M73 116L43 110M73 126L45 130M147 116L177 110M147 126L175 130"/>
-              <path class="cheek" d="M65 119Q78 111 91 121Q78 134 65 119ZM129 121Q142 111 155 119Q142 134 129 121Z"/>
-            </svg>
-          </div>
-          <p class="character-kicker">o lado delicado</p>
-          <h3>G</h3>
-          <p class="character-caption">Um carinho que deixa tudo mais doce.</p>
-          <span class="mini-love">I LOVE YOU 🎀</span>
-        </article>
-      </div>
-    </section>
-
-    <section class="love-note section" id="mensagem">
-      <div class="note-frame">
-        <span class="note-bow" aria-hidden="true">🎀</span>
-        <p class="eyebrow">um recadinho para você</p>
-        <h2>Meu lugar favorito<br>é <em>ao seu lado.</em></h2>
-        <p class="note-text">Entre tantas pessoas e caminhos, que sorte a minha poder compartilhar um pedacinho da vida com você. Que a nossa história continue cheia de carinho, risadas e momentos especiais.</p>
-        <div class="note-hearts" aria-hidden="true">♡ ♥ ♡</div>
-      </div>
-    </section>
-
-    <section class="surprise section">
-      <p class="eyebrow">tem mais um carinho aqui</p>
-      <h2>Uma surpresa para <em>G</em></h2>
-      <p class="section-copy">Clique no botão e descubra uma mensagem.</p>
-      <button class="surprise-button" id="surprise-button" type="button">
-        <span aria-hidden="true">♥</span> abrir minha mensagem
-      </button>
-      <p class="surprise-message" id="surprise-message" aria-live="polite"></p>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-mark">K <span>♥</span> G</div>
-    <p>feito com amor, especialmente para nós</p>
-    <div class="footer-bows" aria-hidden="true">🎀　♡　🎀</div>
-  </footer>
+<header class="top"><a class="brand" href="#">K <span>♥</span> G</a><small>feito com carinho 🎀</small></header>
+<main>
+<section class="hero">
+<div class="eyebrow">✦ um universo só nosso ✦</div>
+<h1>K <span>♥</span> G</h1>
+<p class="sub">Duas letras, dois mundos e uma história especial.</p>
+<div class="down">DESLIZE PARA DESCOBRIR ↓</div>
+</section>
+<section>
+<div class="heading"><div class="eyebrow">nossos personagens</div><h2>Dois jeitinhos de <em>amar</em></h2><p class="sub">Um toque de aventura, um toque de fofura e muito carinho.</p></div>
+<div class="grid">
+<article class="card spider">
+<div class="art" aria-label="Aranha decorativa">
+<svg viewBox="0 0 220 190" role="img" aria-hidden="true">
+<path class="web" d="M110 5V185M15 95H205M42 25L178 165M178 25L42 165M110 5L15 95L110 185L205 95Z"/>
+<path class="web" d="M75 60Q110 42 145 60Q163 95 145 130Q110 148 75 130Q57 95 75 60Z"/>
+<g class="spider-body"><ellipse cx="110" cy="96" rx="18" ry="24"/><circle cx="110" cy="66" r="14"/><path fill="none" d="M96 78L75 62L60 69M94 90L68 86L53 100M95 104L73 116L64 134M102 116L92 140L99 153M124 78L145 62L160 69M126 90L152 86L167 100M125 104L147 116L156 134M118 116L128 140L121 153"/></g>
+<path class="eye" d="M102 62L108 66L102 70Z M118 62L112 66L118 70Z"/>
+</svg></div>
+<div class="kicker">o lado aventureiro</div><div class="letter">K</div><div class="caption">Coragem para enfrentar qualquer dia.</div><div class="love">I LOVE YOU ♥</div>
+</article>
+<article class="card kitty">
+<div class="art" aria-label="Gatinha com laço">
+<svg viewBox="0 0 220 190" role="img" aria-hidden="true">
+<path class="bow" d="M87 42C61 15 43 31 57 58C66 72 80 65 96 55Z M133 42C159 15 177 31 163 58C154 72 140 65 124 55Z"/><circle cx="110" cy="53" r="10" fill="#ff6c88"/>
+<path class="cat-head" d="M57 73L49 35L85 51Q110 42 135 51L171 35L163 73Q181 101 168 133Q153 164 110 164Q67 164 52 133Q39 101 57 73Z"/>
+<ellipse class="cat-eye" cx="84" cy="101" rx="4" ry="7"/><ellipse class="cat-eye" cx="136" cy="101" rx="4" ry="7"/><ellipse class="cat-nose" cx="110" cy="115" rx="5" ry="3"/>
+<path class="whisker" d="M73 116L43 110M73 126L45 130M147 116L177 110M147 126L175 130"/>
+<path class="cheek" d="M65 119Q78 111 91 121Q78 134 65 119ZM129 121Q142 111 155 119Q142 134 129 121Z"/>
+</svg></div>
+<div class="kicker">o lado delicado</div><div class="letter">G</div><div class="caption">Um carinho que deixa tudo mais doce.</div><div class="love">I LOVE YOU 🎀</div>
+</article>
+</div>
+</section>
+<section class="note"><div class="bow-text">🎀</div><div class="eyebrow">um recadinho para você</div><h2>Meu lugar favorito<br>é <em>ao seu lado.</em></h2><p>Entre tantas pessoas e caminhos, que sorte a minha poder compartilhar um pedacinho da vida com você. Que a nossa história continue cheia de carinho, risadas e momentos especiais.</p><div class="love">♡ ♥ ♡</div></section>
+<section class="surprise"><div class="eyebrow">tem mais um carinho aqui</div><h2>Uma surpresa para <em>G</em></h2><p class="sub">Clique no botão e descubra uma mensagem.</p><button id="surprise" type="button">♥ Abrir minha mensagem</button><div id="message" aria-live="polite"></div></section>
+</main>
+<footer>K ♥ G<br><br>feito com amor, especialmente para nós 🎀</footer>
+<script>
+const messages=["Você deixa meus dias mais bonitos. ❤️","Meu coração escolhe você, hoje e sempre. 🎀","K + G: duas letras que formam uma história linda. 💗","Que nunca faltem carinho, respeito e risadas entre nós. ♡","Que sorte a minha ter você na minha história. ❤️"];
+let last=-1;
+document.getElementById("surprise").addEventListener("click",()=>{let n;do{n=Math.floor(Math.random()*messages.length)}while(n===last);last=n;document.getElementById("message").textContent=messages[n]});
+const layer=document.createElement("div");document.body.appendChild(layer);
+if(!matchMedia("(prefers-reduced-motion: reduce)").matches){setInterval(()=>{const h=document.createElement("span");h.className="float";h.textContent=Math.random()>.5?"♥":"♡";h.style.left=Math.random()*100+"vw";h.style.fontSize=12+Math.random()*16+"px";h.style.animationDuration=7+Math.random()*5+"s";layer.appendChild(h);h.addEventListener("animationend",()=>h.remove(),{once:true})},900)}
+</script>
 </body>
-  </html>
-  
+                                                                    </html>
